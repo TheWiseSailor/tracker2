@@ -8,7 +8,7 @@ const PORT = process.env.PORT;
 const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
-  user: "Jay",
+  user: "Joseph",
   password: process.env.DB_PASSWORD,
   database: "employee_tracker",
 });
@@ -137,7 +137,7 @@ function viewAllEmployees() {
 //function toi start adding departments
 function addDepartment() {
   inquirer
-    .promp({
+    .prompt({
       type: "input",
       name: "departmentName",
       message: "Enter the name of the department",
@@ -156,7 +156,7 @@ function addDepartment() {
         [departmentName],
         (err) => {
           if (err) {
-            constole.err("Error adding department:", err);
+            console.err("Error adding department:", err);
           } else {
             console.log(" Department added succesfully.");
           }
