@@ -1,4 +1,5 @@
 //importing the required dependencies over
+require("dotenv").config();
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 //port made
@@ -7,8 +8,8 @@ const PORT = process.env.PORT;
 const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
-  user: "TheWiseSailor",
-  password: "Password",
+  user: "Jay",
+  password: process.env.DB_PASSWORD,
   database: "employee_tracker",
 });
 //making connection to the db, also handles the err and if successful it will say connected
@@ -174,5 +175,5 @@ function exitApp() {
   connection.end();
 }
 
-// initaition of the application
+// iniaition of the application
 startApp();
