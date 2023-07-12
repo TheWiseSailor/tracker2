@@ -168,3 +168,11 @@ function addDepartment() {
       startApp();
     });
 }
+//making a function to be able to exit the application
+function exitApp() {
+  console.log("Exiting application");
+  connection.end();
+}
+
+// initaition of the application
+startApp();
