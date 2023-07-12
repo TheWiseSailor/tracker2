@@ -133,4 +133,38 @@ function viewAllEmployees() {
     startApp();
   });
 }
-//
+//function toi start adding departments
+function addDepartment() {
+  inquirer
+    .promp({
+      type: "input",
+      name: "departmentName",
+      message: "Enter the name of the department",
+      validate: (input) => {
+        if (input.trim() !== "") {
+          return true;
+        } else {
+          return "Please enter a department name.";
+        }
+      },
+    })
+    .then((answers) => {
+      const departmentName = answers.departmentName;
+      connection.query(
+        "INSERT INTO departments (name) VALUES (?)",
+        [departmentName],
+        (err) => {
+          if (err) {
+            constole.err("Error adding department:", err);
+          } else {
+            console.log(" Department added succesfully.");
+          }
+          startApp();
+        }
+      );
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      startApp();
+    });
+}
