@@ -508,6 +508,43 @@ function deleteRole() {
       startApp();
     });
 }
+//function do delete employees, this is literally jsut a copy and paste versions like the past
+function deleteEmployee() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "employee_id",
+        message: "Enter the ID of the employee you want to delete:",
+        validate: (input) => {
+          if (input.trim() !== "" && !isNaN(input)) {
+            return true;
+          } else {
+            return "Please enter a valid employee ID.";
+          }
+        },
+      },
+    ])
+    .then((answers) => {
+      const { employee_id } = answers;
+      connection.query(
+        "DELETE FROM employees WHERE id = ?",
+        [employee_id],
+        (err) => {
+          if (err) {
+            console.error("Error deleting employee:", err);
+          } else {
+            console.log("Employee deleted successfully.");
+          }
+          startApp();
+        }
+      );
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      startApp();
+    });
+}
 //making a function to be able to exit the application
 function exitApp() {
   console.log("Exiting application");
