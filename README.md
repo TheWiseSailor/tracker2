@@ -19,7 +19,6 @@ Key features of the Employee Tracker application include:
 - [Demo](#Demo)🎞
 - [License](#license)💳
 - [Contact](#contact)📩
-- [Deployed Site](#deployedsite)🧮
 - [Repository](#repository)📂
 - [Tools](#Tools)🛠
 
@@ -72,9 +71,9 @@ You may contact me by rudasilljay@gmail.com
 
 ## Demo <a name="Demo"></a>
 
-## Deployed Site <a name="deployedsite"></a>
-
 ## Repository <a name="repository"></a>
+
+https://github.com/TheWiseSailor/SQL-Employee-Tracker
 
 ## Tools<a name="Tools"></a>
 
