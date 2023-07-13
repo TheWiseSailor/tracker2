@@ -435,6 +435,79 @@ function addRole() {
       startApp();
     });
 }
+
+//making as function to dlete a department
+function deleteDepartment() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "department_id",
+        message: "Enter the ID of the department you want to delete:",
+        validate: (input) => {
+          if (input.trim() !== "" && !isNaN(input)) {
+            return true;
+          } else {
+            return "Please enter a valid department ID.";
+          }
+        },
+      },
+    ])
+    .then((answers) => {
+      const { department_id } = answers;
+      connection.query(
+        "DELETE FROM departments WHERE id = ?",
+        [department_id],
+        (err) => {
+          if (err) {
+            console.error("Error deleting department:", err);
+          } else {
+            console.log("Department deleted successfully.");
+          }
+          startApp();
+        }
+      );
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      startApp();
+    });
+}
+
+//making a deleterole featuer
+// Function to delete a role
+function deleteRole() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "role_id",
+        message: "Enter the ID of the role you want to delete:",
+        validate: (input) => {
+          if (input.trim() !== "" && !isNaN(input)) {
+            return true;
+          } else {
+            return "Please enter a valid role ID.";
+          }
+        },
+      },
+    ])
+    .then((answers) => {
+      const { role_id } = answers;
+      connection.query("DELETE FROM roles WHERE id = ?", [role_id], (err) => {
+        if (err) {
+          console.error("Error deleting role:", err);
+        } else {
+          console.log("Role deleted successfully.");
+        }
+        startApp();
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      startApp();
+    });
+}
 //making a function to be able to exit the application
 function exitApp() {
   console.log("Exiting application");
