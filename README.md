@@ -2,11 +2,12 @@
 
 ## Overview
 
+The Employee Tracker is a program that manages and tracks employee information. It has the following major features:
 Key features of the Employee Tracker application include:
 
--
--
--
+- Find workers by name, department, or position using the search and filter functionality.
+- Tracking employee performance: Monitor and update employee performance data.
+- Reporting and analytics: Create reports and analyze employee data.
 
 ## Table of Contents
 
@@ -24,9 +25,10 @@ Key features of the Employee Tracker application include:
 
 ## Key Features <a name="key-features"></a>
 
--
--
--
+- Employee record administration: Add, update, and remove employee records.
+- Search and filter capabilities: Find workers using various parameters such as name, department, or position.
+- Tracking employee performance: Monitor and update employee performance data.
+- Reporting and analytics: Create reports and analyze employee data.
 
 ## Installation <a name="installation"></a>
 
@@ -40,19 +42,11 @@ To install and run the Employee Tracker, follow these steps: <br>
 
 ## Usage <a name="usage"></a>
 
-1.
-
-2.
-
-3.
-
-4.
-
-5.
-
-6.
-
-7.
+1. In your web browser, launch the Employee Tracker program.
+2. Add, update, or remove employee records using the supplied interface.
+3. Use the search and filter features to identify particular workers depending on your requirements.
+4. As needed, update employee performance metrics.
+5. Create reports and extract insights from staff data.
 
 ## Contributing <a name="contributing"></a>
 
@@ -90,3 +84,6 @@ You may contact me by rudasilljay@gmail.com
 [![.gitignore](https://badgen.net/badge/icon/git?icon=git&label)](https://git-scm.com/doc)
 [![Node.js](https://badgen.net/badge/icon/nodejs?icon=nodejs&label)](https://nodejs.org/)
 [![npm](https://badgen.net/badge/icon/npm?icon=npm&label)](https://npmjs.com/)
+[![MySQL2](https://badgen.net/badge/icon/mysql2?icon=mysql&label)](https://www.npmjs.com/package/mysql2)
+[![dotenv](https://badgen.net/badge/icon/dotenv?icon=terminal&label)](https://www.npmjs.com/package/dotenv)
+[![inquirer](https://badgen.net/badge/icon/inquirer?icon=terminal&label)](https://www.npmjs.com/package/inquirer)
