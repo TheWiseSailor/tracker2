@@ -1,4 +1,4 @@
-# Employee Tracker
+[Untitled_ Jul 13, 2023 5_32 PM (1).webm](https://github.com/TheWiseSailor/SQL-Employee-Tracker/assets/68026214/96df6e64-ada8-48b5-8228-497b08065af4)# Employee Tracker
 
 ## Overview
 
@@ -70,7 +70,10 @@ To install and run the Employee Tracker, follow these steps: <br>
 You may contact me by rudasilljay@gmail.com
 
 ## Demo <a name="Demo"></a>
+[Untitled_ Jul 13, 2023 5_32 PM (1).webm](https://github.com/TheWiseSailor/SQL-Employee-Tracker/assets/68026214/f1cc29b0-7110-45f8-a53e-c16917808879)
 
+## Demo Drive
+https://drive.google.com/file/d/1UKfx6CvrZCkOBP9Dv6qwMMtHHh646H9e/view
 ## Repository <a name="repository"></a>
 
 https://github.com/TheWiseSailor/SQL-Employee-Tracker
