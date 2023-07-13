@@ -33,4 +33,4 @@ VALUES
     (9, 'Kevin', 'Mason', 9, 8),
     (10, 'Mo', 'Salah', 10, NULL),
     (11, 'Sadio', 'Mane', 11, 10);
-```
+
