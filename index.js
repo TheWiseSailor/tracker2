@@ -3,13 +3,12 @@ require("dotenv").config();
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 //port made
-const PORT = process.env.PORT;
+const PORT = 3001;
 //sql connection
 const connection = mysql.createConnection({
   host: "localhost",
-  port: 3001,
   user: "root",
-  password: process.env.DB_PASSWORD,
+  password: "Password",
   database: "employee_tracker",
 });
 //making connection to the db, also handles the err and if successful it will say connected
@@ -104,7 +103,7 @@ function viewAllDepartments() {
 //functyion to view all roles if availavble
 function viewAllRoles() {
   const query = `
-    SELECT roles.id, roles.name AS title, roles.profits, departments.name AS department
+    SELECT roles.id, roles.title AS title, roles.salary, departments.name AS department
     FROM roles
     INNER JOIN departments ON roles.department_id = departments.id
   `;
@@ -122,7 +121,7 @@ function viewAllRoles() {
 //functuion to be able to view all employee(s)
 function viewAllEmployees() {
   const query =
-    "SELECT employees.id, employees.first_name, employees.last_name, roles.name AS title, departments.name AS department FROM employees INNER JOIN roles ON employees.role_id = roles.id INNER JOIN departments ON roles.department_id = departments.id";
+    "SELECT employees.id, employees.first_name, employees.last_name, roles.title AS title, departments.name AS department FROM employees INNER JOIN roles ON employees.role_id = roles.id INNER JOIN departments ON roles.department_id = departments.id";
   connection.query(query, (err, results) => {
     if (err) {
       console.error("Error retrieving employees: ", err);
@@ -356,7 +355,7 @@ function addRole() {
     .then((answers) => {
       const { title, profits, department_id } = answers;
       connection.query(
-        "INSERT INTO roles (name, profits, department_id) VALUES (?,?,?)",
+        "INSERT INTO roles (title , salary, department_id) VALUES (?,?,?)",
         [title, profits, department_id],
         (err) => {
           if (err) {
@@ -418,7 +417,7 @@ function addRole() {
     .then((answers) => {
       const { title, profits, department_id } = answers;
       connection.query(
-        "INSERT INTO roles (name, profits, department_id) VALUES (?,?,?)",
+        "INSERT INTO roles (title, salary, department_id) VALUES (?,?,?)",
         [title, profits, department_id],
         (err) => {
           if (err) {
@@ -550,6 +549,3 @@ function exitApp() {
   console.log("Exiting application");
   connection.end();
 }
-
-// iniaition of the application
-startApp();
