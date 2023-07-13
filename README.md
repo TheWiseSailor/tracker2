@@ -1,4 +1,4 @@
-[Untitled_ Jul 13, 2023 5_32 PM (1).webm](https://github.com/TheWiseSailor/SQL-Employee-Tracker/assets/68026214/96df6e64-ada8-48b5-8228-497b08065af4)# Employee Tracker
+# Employee Tracker
 
 ## Overview
 
