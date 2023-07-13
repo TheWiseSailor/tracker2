@@ -244,7 +244,74 @@ function addEmployee() {
       startApp();
     });
 }
-
+//function to updateemployee record
+function updateEmployee() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "id",
+        message: "Enter the ID of the employee you want to update:",
+        validate: (input) => {
+          if (input.trim() !== "" && !isNaN(input)) {
+            return true;
+          } else {
+            return "Please enter a valid ID.";
+          }
+        },
+      },
+      {
+        type: "list",
+        name: "field",
+        message: "which field woud you like to update?",
+        choices: ["First Name", "Last Name", "Role ID", "Manager ID"],
+      },
+      {
+        type: "input",
+        name: "value",
+        message: "Enter the new value:",
+        validate: (input) => {
+          if (input.trim() !== "") {
+            return true;
+          } else {
+            return "Please enter a new value.";
+          }
+        },
+      },
+    ])
+    .then((answers) => {
+      const { id, field, value } = answers;
+      let query;
+      switch (field) {
+        case "First Name":
+          query = "UPDATE employees SET first_name = ? WHERE id = ?";
+          break;
+        case "Last Name":
+          query = "UPDATE employees SET last_name = ? WHERE id = ?";
+          break;
+        case "Role ID":
+          query = "UPDATE employees SET role_id = ? WHERE id = ?";
+          break;
+        case "Manager ID":
+          query = "UPDATE employees SET manager_id = ? WHERE id = ?";
+          break;
+        default:
+          break;
+      }
+      connection.query(query, [value, id], (err) => {
+        if (err) {
+          console.error("Error updating employee:", err);
+        } else {
+          console.log("Employee updated successfully.");
+        }
+        startApp();
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      startApp();
+    });
+}
 //making a function to be able to exit the application
 function exitApp() {
   console.log("Exiting application");
